@@ -6,6 +6,7 @@ ARG USER=builder
 ENV SHELL /bin/bash
 ENV LANG=en_US.UTF-8
 
+# core yocto requirements
 RUN apt update -y && \
     DEBIAN_FRONTEND=noninteractive apt install -y \
     build-essential \
@@ -37,8 +38,7 @@ RUN apt update -y && \
     wget \
     xterm \
     xz-utils \
-    zstd \
-    && rm -rf /var/lib/apt/lists/*
+    zstd
 
 RUN locale-gen en_US.UTF-8 && update-locale
 RUN useradd -m $USER && echo "$USER:$USER" | chpasswd && adduser $USER sudo
