@@ -1,4 +1,4 @@
-FROM ghcr.io/cracked-machine/yocto_docker:ubuntu2204
+FROM ghcr.io/cracked-machine/yocto_core:ubuntu2204
 
 ARG USER=builder
 
@@ -11,7 +11,7 @@ RUN apt update -y && \
     gdisk \
     libgmp-dev \
     libmpc-dev \
-    libssl-dev
-
+    libssl-dev \
+    repo
 
 USER $USER
