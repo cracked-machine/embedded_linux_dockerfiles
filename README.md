@@ -3,6 +3,7 @@
 |Name|Image|Build|Run|Push|
 |:-|:-|:-|:-|:-|
 |Core Yocto Image|yocto_core|DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/cracked-machine/yocto_core:ubuntu2204 .|docker run -it --rm ghcr.io/cracked-machine/yocto_core:ubuntu2204|docker push ghcr.io/cracked-machine/yocto_core:ubuntu2204|
+|Xilinx Yocto Image|yocto_xlnx|DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_xlnx/Dockerfile -t ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204 .|docker run -it --rm ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204|docker push ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204|
 |Open ST Linux Docker Image|yocto_openstlinux|DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_openstlinux/Dockerfile -t ghcr.io/cracked-machine/yocto_openstlinux:ubuntu2204 .|docker run -it --rm ghcr.io/cracked-machine/yocto_openstlinux:ubuntu2204|docker push ghcr.io/cracked-machine/yocto_openstlinux:ubuntu2204|
 |Buildroot Image|buildroot|DOCKER_BUILDKIT=1 docker build -f dockerfiles/buildroot/Dockerfile -t ghcr.io/cracked-machine/buildroot:ubuntu2204 .|docker run -it --rm ghcr.io/cracked-machine/buildroot:ubuntu2204|docker push ghcr.io/cracked-machine/buildroot:ubuntu2204|
 
