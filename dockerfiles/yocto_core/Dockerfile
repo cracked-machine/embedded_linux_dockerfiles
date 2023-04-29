@@ -40,6 +40,12 @@ RUN apt update -y && \
     xz-utils \
     zstd
 
+# core yocto requirements
+RUN apt update -y && \
+    DEBIAN_FRONTEND=noninteractive apt install -y \
+    u-boot-tools \
+    device-tree-compiler
+
 RUN locale-gen en_US.UTF-8 && update-locale
 RUN useradd -m $USER && echo "$USER:$USER" | chpasswd && adduser $USER sudo
 
