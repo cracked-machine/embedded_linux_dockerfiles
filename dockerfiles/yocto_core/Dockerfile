@@ -50,7 +50,7 @@ RUN apt update -y && \
 RUN locale-gen en_US.UTF-8 && update-locale
 RUN useradd -m $USER && echo "$USER:$USER" | chpasswd && adduser $USER sudo
 
-COPY requirements.txt requirements.txt
+COPY dockerfiles/yocto_core/requirements.txt requirements.txt
 RUN pip install -r requirements.txt 
 
 USER $USER  
