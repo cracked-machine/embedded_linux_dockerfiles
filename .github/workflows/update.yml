@@ -18,3 +18,4 @@ jobs:
       - name: build yocto_core docker image
         run: |
           DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/cracked-machine/yocto_core:ubuntu2204 .
+          docker push ghcr.io/cracked-machine/yocto_core:ubuntu2204
