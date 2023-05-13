@@ -27,18 +27,18 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      # - name: Build and push yocto_core
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     file: dockerfiles/yocto_core/Dockerfile
-      #     push: true
-      #     tags: cracked-machine/yocto_core:ubuntu2204
+      - name: Build and push yocto_core
+        uses: docker/build-push-action@v4
+        with:
+          file: dockerfiles/yocto_core/Dockerfile
+          push: true
+          tags: ${{ github.actor }}/yocto_core:ubuntu2204
 
 
-      - name: build yocto_core 
-        run: DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204 .
+      # - name: build yocto_core 
+      #   run: DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204 .
       
-      - name: push yocto_core 
-        run: env && docker push ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204
+      # - name: push yocto_core 
+      #   run: env && docker push ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204
   
   
