@@ -1,5 +1,14 @@
 # Embedded Linux Dockerfiles
 
+Modifying the `yocto_core` dockerfile and pushing the commit will trigger a rebuild of `yocto_core` _AND_ all child yocto dockerfiles:
+
+- `yocto_openstlinux`
+- `yocto_xlnx`
+
+# Manual commands
+
+This is included below for legacy purposes. Please use the CI integration instead.
+
 |Name|Image|Build|Run|Push|
 |:-|:-|:-|:-|:-|
 |Core Yocto Image|yocto_core|DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/cracked-machine/yocto_core:ubuntu2204 .|docker run -it --rm ghcr.io/cracked-machine/yocto_core:ubuntu2204|docker push ghcr.io/cracked-machine/yocto_core:ubuntu2204|
