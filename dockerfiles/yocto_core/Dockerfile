@@ -18,6 +18,7 @@ RUN apt update -y && \
     gawk \
     gcc \
     git \
+    iproute2 \
     iputils-ping \
     mesa-common-dev \
     python3 \
