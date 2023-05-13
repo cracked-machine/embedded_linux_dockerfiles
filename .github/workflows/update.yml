@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: build yocto_core docker image
         run: DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/cracked-machine/yocto_core:ubuntu2204 .
       
