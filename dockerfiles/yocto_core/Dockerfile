@@ -1,5 +1,6 @@
 FROM ubuntu:22.04
 
+# "builder" is defined with sudo permissions in yocto_core
 ARG USER=builder
 
 # persist into docker container instance
