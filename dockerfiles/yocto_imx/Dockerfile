@@ -13,7 +13,6 @@ RUN apt update -y && \
     curl \
     pzstd \
     python \
-    lz4c \
     lz4 \
     libssl-dev
 
