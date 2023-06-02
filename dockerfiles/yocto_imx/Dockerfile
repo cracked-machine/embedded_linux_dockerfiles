@@ -11,9 +11,9 @@ RUN apt update -y && \
     gcc-multilib \
     rsync \
     curl \
-    pzstd \
     python \
     lz4 \
-    libssl-dev
+    libssl-dev \
+    repo
 
 USER $USER
