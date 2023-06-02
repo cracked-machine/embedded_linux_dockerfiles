@@ -55,5 +55,22 @@ jobs:
         run: DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_xlnx/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_xlnx:ubuntu2204 .
       - name: push yocto_xlnx
         run: env && docker push ghcr.io/${{ github.actor }}/yocto_xlnx:ubuntu2204
-  
+
+  # "yocto_imx" package settings must have "embedded_linux_dockerfiles" added as a source repository with write permissions
+  build_yocto_imx:
+    runs-on: ubuntu-latest
+    needs: build_yocto_core
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: build yocto_imx
+        run: DOCKER_BUILDKIT=1 docker build -f dockerfiles/yocto_imx/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_imx:ubuntu2204 .
+      - name: push yocto_imx
+        run: env && docker push ghcr.io/${{ github.actor }}/yocto_imx:ubuntu2204
+   
   
