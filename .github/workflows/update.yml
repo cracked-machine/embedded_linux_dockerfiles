@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: build yocto_core 
-        run: docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_core:$(git rev-parse --short "$GITHUB_SHA") .
+        run: docker build -f dockerfiles/yocto_core/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204 .
       - name: push yocto_core 
         run: env && docker push ghcr.io/${{ github.actor }}/yocto_core:ubuntu2204
 
@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: build yocto_openstlinux
-        run: docker build -f dockerfiles/yocto_openstlinux/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_openstlinux:$(git rev-parse --short "$GITHUB_SHA") .
+        run: docker build -f dockerfiles/yocto_openstlinux/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_openstlinux:ubuntu2204 .
       - name: push yocto_openstlinux
         run: env && docker push ghcr.io/${{ github.actor }}/yocto_openstlinux:ubuntu2204
 
@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: build yocto_xlnx
-        run: docker build -f dockerfiles/yocto_xlnx/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_xlnx:$(git rev-parse --short "$GITHUB_SHA") .
+        run: docker build -f dockerfiles/yocto_xlnx/Dockerfile -t ghcr.io/${{ github.actor }}/yocto_xlnx:ubuntu2204 .
       - name: push yocto_xlnx
         run: env && docker push ghcr.io/${{ github.actor }}/yocto_xlnx:ubuntu2204
 
